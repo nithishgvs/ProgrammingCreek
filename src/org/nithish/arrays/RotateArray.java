@@ -1,5 +1,7 @@
 package org.nithish.arrays;
 
+import java.util.Arrays;
+
 public class RotateArray {
 
 	/*
@@ -24,6 +26,16 @@ public class RotateArray {
 		array[i] = temp;
 	}
 
+	public static <T> void RotatingArrayRightByChopping(int[] array, int K) {
+
+		int[] subArray1 = Arrays.copyOfRange(array, K, array.length);
+		int[] subArray2 = Arrays.copyOfRange(array, 0, K);
+		int[] result = Arrays.copyOf(subArray1, subArray1.length + subArray2.length);
+		System.arraycopy(subArray2, 0, result, subArray1.length, subArray2.length);
+		PrintArray(result);
+
+	}
+
 	private static void PrintArray(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + "->");
@@ -35,6 +47,7 @@ public class RotateArray {
 	public static void main(String[] args) {
 		int[] array = { 1, 2, 3, 4, 5, 6, 7 };
 		RotatingArrayRightTwoLoops(array, 2);
+		RotatingArrayRightByChopping(array, 2);
 
 	}
 
