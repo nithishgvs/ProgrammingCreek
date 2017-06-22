@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class IsomorphicStrings {
 
+	
 	public static boolean IsomorphicStringsHelper(String s1, String s2) {
 
 		if (s1.length() != s2.length()) {
