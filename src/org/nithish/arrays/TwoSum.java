@@ -1,5 +1,6 @@
 package org.nithish.arrays;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TwoSum {
@@ -59,12 +60,34 @@ public class TwoSum {
 	}
 
 	public static void main(String[] args) {
-		int[] array = { 2, 7, 11, 15 };
+		int[] array = { 2, 3, 4, 5, 6, 7 };
 		int[] result = twoSumUnSortedArray(array, 18);
 		for (int i = 0; i < result.length; i++) {
 			System.out.println(result[i]);
 		}
+		TwoSumMultiple(array, 11);
 
+	}
+
+	private static void TwoSumMultiple(int[] array, int sum) {
+		int l = 0;
+		int h = array.length - 1;
+		ArrayList<String> al = new ArrayList<>();
+		while (l < h) {
+			if (array[l] + array[h] == sum) {
+				String out = array[l] + "," + array[h];
+				al.add(out);
+				l++;
+				h--;
+			} else if (sum - array[l] > array[h]) {
+				l++;
+			} else {
+				h--;
+			}
+		}
+		for (String str : al) {
+			System.out.println(str);
+		}
 	}
 
 }
