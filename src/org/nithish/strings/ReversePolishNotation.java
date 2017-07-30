@@ -2,6 +2,8 @@ package org.nithish.strings;
 
 import java.util.Stack;
 
+import javax.swing.plaf.multi.MultiButtonUI;
+
 public class ReversePolishNotation {
 
 	/*
@@ -49,6 +51,11 @@ public class ReversePolishNotation {
 	public static void main(String[] args) {
 		String[] array = new String[] { "4", "13", "5", "/", "+" };
 		ReversePolishNotationProgram(array);
+		int[][] multD = new int[5][10];
+        System.out.println(multD.length);
+        System.out.println(multD[0].length);
+        
+	   
 	}
 
 }
